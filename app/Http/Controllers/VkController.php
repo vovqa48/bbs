@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cat;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use VK\Client\VKApiClient;
 
@@ -9,11 +11,16 @@ class VkController extends Controller
 {
     public function callback(Request $request)
     {
+
+    /*   dd(Cat::all());*/
         $data = $request->all();
 
         if ($data['type'] != 'message_new') {
             return 'ok';
         }
+
+        /*  SELECT `Cats`.*, `Curators`.`name` as `curator_name`
+  FROM `Cats` INNER JOIN `Curators` ON (`Cats`.`Curator_id`=`Curators`.`Curator_id`);*/
 
 
         $peerId = $data['object']['message']['peer_id'];
@@ -67,10 +74,13 @@ class VkController extends Controller
 
         return 'ok';
 
-        /*try {
-            echo '46d64fb8';
-        } catch (\Exception $e) {
-            return $e->getMessage();
-        }*/
+
+
+        /* try {
+             echo '2403665e';
+         } catch (\Exception $e) {
+             return $e->getMessage();
+         }*/
+
     }
 }

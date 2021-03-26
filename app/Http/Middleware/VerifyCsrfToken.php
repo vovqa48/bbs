@@ -11,7 +11,6 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array
      */
-    protected $except = [
-        '/vk/callback'
+    protected $except = ['*'
     ];
 }
