@@ -11,8 +11,8 @@ class VkController extends Controller
 {
     public function callback(Request $request)
     {
+        dd(Cat::all());
 
-    /*   dd(Cat::all());*/
         $data = $request->all();
 
         if ($data['type'] != 'message_new') {
