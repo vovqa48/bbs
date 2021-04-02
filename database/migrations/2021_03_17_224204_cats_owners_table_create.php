@@ -17,8 +17,8 @@ class CatsOwnersTableCreate extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('cat_id');
             $table->unsignedBigInteger('owner_id');
-            $table->string('date_adopted')->nullable();
-            $table->string('date_rejected')->nullable();
+            $table->date('date_adopted')->nullable();
+            $table->date('date_rejected')->nullable();
             $table->timestamps();
         });
     }

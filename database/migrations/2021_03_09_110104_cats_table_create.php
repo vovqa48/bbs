@@ -16,10 +16,10 @@ class CatsTableCreate extends Migration
         Schema::create('cats', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('date_birthday')->nullable();
+            $table->date('date_birthday')->nullable();
             $table->string('photo')->nullable();
             $table->string('cat_story')->nullable();
-            $table->string('cat_come_in')->nullable();
+            $table->date('cat_come_in')->nullable();
             $table->string('status')->nullable();
             $table->unsignedBigInteger('curator_id');
             $table->string('special_signs')->nullable();

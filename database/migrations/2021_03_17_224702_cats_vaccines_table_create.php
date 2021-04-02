@@ -18,7 +18,7 @@ class CatsVaccinesTableCreate extends Migration
             $table->unsignedBigInteger ('cat_id');
             $table->unsignedBigInteger ('vaccine_id');
             $table->unsignedBigInteger('curator_id');
-            $table->string('date_vaccine');
+            $table->date('date_vaccine');
             $table->timestamps();
         });
     }

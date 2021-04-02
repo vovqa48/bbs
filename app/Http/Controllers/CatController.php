@@ -13,7 +13,8 @@ class CatController extends Controller
 {
     public function add(Add $request)
     {
-        Cat::create([
+
+      Cat::create([
             'name' => $request->get('name'),
             'date_birthday' => $request->get('date_birthday'),
             'photo' => $request->get('photo'),
@@ -23,6 +24,7 @@ class CatController extends Controller
             'curator_id' => $request->get('curator_id'),
             'special_signs' => $request->get('special_signs')
         ]);
+
     }
 
     public function get(Get $request)
