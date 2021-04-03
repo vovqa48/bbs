@@ -24,13 +24,13 @@ class Add extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'required',
-            'date_birthday'=> 'max:20',
+            'name'=> 'required|max:20',
+            'date_birthday'=> 'date|nullable',
             'photo'=> 'nullable',
             'cat_story'=> 'nullable',
-            'cat_come_in'=> 'nullable',
-            'status'=> 'nullable',
-
+            'cat_come_in'=> 'date|nullable',
+            'curator_id'=> 'required|exists:curators,id',
+            'special_signs'=> 'nullable',
         ];
     }
 

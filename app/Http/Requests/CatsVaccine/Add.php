@@ -24,10 +24,10 @@ class Add extends FormRequest
     public function rules()
     {
         return [
-            'cat_id'=> 'required',
-            'vaccine_id'=> 'required',
-            'curator_id'=> 'required',
-            'date_vaccine'=> 'required',
+            'cat_id'=> 'required|exists:cat,id',
+            'vaccine_id'=> 'required|exists:vaccine,id',
+            'curator_id'=> 'required|exists:curator,id',
+            'date_vaccine'=> 'date|required',
         ];
     }
 }

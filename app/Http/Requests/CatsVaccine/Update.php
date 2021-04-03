@@ -13,7 +13,7 @@ class Update extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class Update extends FormRequest
     public function rules()
     {
         return [
-            //
+            'cat_id'=> 'required|exists:cat,id',
+            'vaccine_id'=> 'required|exists:vaccine,id',
+            'curator_id'=> 'required|exists:curator,id',
+            'date_vaccine'=> 'date|required',
         ];
     }
 }

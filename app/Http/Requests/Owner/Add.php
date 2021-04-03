@@ -24,9 +24,9 @@ class Add extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'required'|'max:20',
-            'surname'=> 'nullable',
-            'phone'=> 'required',
+            'name'=> 'required|alpha|max:20',
+            'surname'=> 'required|alpha|max:25',
+            'phone'=> 'required|integer',
             'vk_acc'=> 'nullable',
             'insta_acc'=> 'nullable',
             'adress'=> 'nullable'

@@ -14,16 +14,17 @@ class CatController extends Controller
     public function add(Add $request)
     {
 
+
       Cat::create([
-            'name' => $request->get('name'),
-            'date_birthday' => $request->get('date_birthday'),
-            'photo' => $request->get('photo'),
-            'cat_story' => $request->get('cat_story'),
-            'cat_come_in' => $request->get('cat_come_in'),
-            'status' => $request->get('status'),
-            'curator_id' => $request->get('curator_id'),
-            'special_signs' => $request->get('special_signs')
-        ]);
+            'name' => $request['name'],
+            'date_birthday' => $request['date_birthday'],
+            'photo' => $request['photo'],
+            'cat_story' => $request['cat_story'],
+            'cat_come_in' => $request['cat_come_in'],
+            'status' => $request['status'],
+            'curator_id' => $request['curator_id'],
+            'special_signs' => $request['special_signs']
+      ]);
 
     }
 

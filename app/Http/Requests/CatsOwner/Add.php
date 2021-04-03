@@ -24,9 +24,9 @@ class Add extends FormRequest
     public function rules()
     {
         return [
-            'cat_id'=> 'required',
-            'owner_id'=> 'required',
-            'date_adopted'=> 'required',
+            'cat_id'=> 'required|exists:cats,id',
+            'owner_id'=> 'required|exists:owners,id',
+            'date_adopted'=> 'date|required',
             'date_rejected'=> 'nullable',
         ];
     }

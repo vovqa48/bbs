@@ -24,11 +24,11 @@ class Add extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'required'|'max:20',
-            'regularity_id'=> 'required',
-            'method_id'=> 'required',
+            'name'=> 'required|max:30',
+            'regularity_id'=> 'required|exists:regularitys,id',
+            'method_id'=> 'required|exists:methods,id',
             'description'=> 'required',
-            'view_id'=> 'required',
+            'view_id'=> 'required|exists:views,id',
             'photo'=> 'nullable'
 
         ];

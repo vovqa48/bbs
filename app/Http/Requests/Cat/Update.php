@@ -24,14 +24,13 @@ class Update extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'required'|'max:20',
-            'date_birthday'=> 'nullable',
+            'name'=> 'required|max:20',
+            'date_birthday'=> 'date|nullable',
             'photo'=> 'nullable',
             'cat_story'=> 'nullable',
-            'cat_come_in'=> 'nullable',
-            'status'=> 'nullable',
-            'curator_id'=> 'required',
-            'special_signs'=> 'nullable'
+            'cat_come_in'=> 'date|nullable',
+            'curator_id'=> 'required|exists:curators,id',
+            'special_signs'=> 'nullable',
         ];
     }
 }
