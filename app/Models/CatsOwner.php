@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Model;
  * Class CatsOwner
  * @package App\Models
  * @property string $name
- * @property string $date_adopted
- * @property string $date_rejected
+ * @property Carbon $date_adopted
+ * @property Carbon $date_rejected
  * @property Carbon $created_at
  * @property Carbon $updated_at
 

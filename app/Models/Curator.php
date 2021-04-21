@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $insta_acc
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ * @property CatsCurator $catscurator
  *
  */
 class Curator extends Model
@@ -24,8 +25,8 @@ class Curator extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function cat()
+    public function Catscurator()
     {
-        return $this->belongsToMany(Cat::class);
+        return $this->hasMany (CatsCurator::class);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\View\View;
 
 /**
  * Class Vaccine
@@ -13,9 +14,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $description;
  * @property string $photo;
  *
- * @property Method $regularity;
+ * @property Regularity $regularity;
  * @property Method $method;
- * @property Method $view;
+ * @property View $view;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  *

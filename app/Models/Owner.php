@@ -17,8 +17,16 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $adress
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ *
+ * @property CatsOwner @catsowner
  */
 class Owner extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+
+    public function owner()
+    {
+        return $this->hasMany(CatsOwner::class);
+    }
 }

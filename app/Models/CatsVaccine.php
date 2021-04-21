@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class CatsVaccine
  * @package App\Models
  * @property string $name
- * @property string $date_birthday
+ * @property Carbon $date_birthday
  * @property Carbon $created_at
  * @property Carbon $updated_at
 

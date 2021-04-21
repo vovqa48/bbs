@@ -19,16 +19,26 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $created_at
  * @property Carbon $updated_at
 
- * @property Cat $cat
- * @property Curator $curator
+ * @property CatsOwner $catsowner
+ * @property CatsCurators $catscurator
+ * @method byName()
  */
 class Cat extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function curator()
+    public function scopebyName($query, $name)
     {
-        return $this->hasOne(Curator::class);
+        return $query->where('name', $name)->first();
+
+    }
+    public function catscurator()
+    {
+        return $this->hasOne(CatsCurator::class);
+    }
+    public function catsowner()
+    {
+        return $this->hasOne(CatsOwner::class);
     }
 }
