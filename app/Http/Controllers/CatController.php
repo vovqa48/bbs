@@ -13,9 +13,7 @@ class CatController extends Controller
 {
     public function add(Add $request)
     {
-
-
-      Cat::create([
+        Cat::create([
             'name' => $request['name'],
             'date_birthday' => $request['date_birthday'],
             'photo' => $request['photo'],
@@ -24,20 +22,34 @@ class CatController extends Controller
             'status' => $request['status'],
             'curator_id' => $request['curator_id'],
             'special_signs' => $request['special_signs']
-      ]);
+        ]);
 
     }
 
     public function get(Get $request)
     {
-        return 1;
+        $cat= Cat::byName('Граф');
+
+        return view( 'catview',['cat'=> $cat]);
+
     }
+
+
     public function delete(Delete $request)
     {
-        return 1;
+        Cat::destroy($request['id']);
     }
     public function update(Update $request)
     {
-        return 1;
+        Cat::update([
+            'name' => $request['name'],
+            'date_birthday' => $request['date_birthday'],
+            'photo' => $request['photo'],
+            'cat_story' => $request['cat_story'],
+            'cat_come_in' => $request['cat_come_in'],
+            'status' => $request['status'],
+            'curator_id' => $request['curator_id'],
+            'special_signs' => $request['special_signs']
+        ]);
     }
 }

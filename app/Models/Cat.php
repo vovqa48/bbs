@@ -33,9 +33,9 @@ class Cat extends Model
         return $query->where('name', $name)->first();
 
     }
-    public function catscurator()
+    public function curator()
     {
-        return $this->hasOne(CatsCurator::class);
+        return $this->hasOne(Curator::class,'id');
     }
     public function catsowner()
     {
